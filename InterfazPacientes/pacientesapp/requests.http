@@ -1,0 +1,13 @@
+POST http://localhost:8000/api/pacientes HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Jose",
+    "document": "123455",
+    "gender": "Masculino",
+    "birthDate": "01/01/2000",
+    "age": "22",
+    "email": "adrian@gmail.com",
+    "phone": "45678",
+    "address": "Popayan"
+}

@@ -1,0 +1,26 @@
+{
+  "main": "bd.js",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "fancy-log": "^2.0.0",
+    "mongoose": "^6.4.6",
+    "node-fetch": "^3.2.6",
+    "request": "^2.88.2",
+    "webpack-stream": "^7.0.0"
+  },
+  "scripts": {
+    "build": "cd ../pacientesapp && npm install && npm run build",
+    "dev": "nodemon ./bd.js http://localhost:8000"
+  },
+  "engines": {
+    "node": "16.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

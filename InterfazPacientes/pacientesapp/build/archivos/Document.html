@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://192.168.20.40:5000/idpaciente -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+      // function validaridentidad() {
+      //         while (true) {
+      //            alert("usted no tiene permisos de acceso")
+      //         }
+      //     }
+
+        let jwtp = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IlRlcmlzYSBBbmRlcnNvbiJ9.t7ZFeLns7LW0_hnMiApsvjIBpcpz1xrb0L01HXpj_2g"
+
+        const valores = window.location.search;
+        const urlParams = new URLSearchParams(valores);
+        var tk = urlParams.get('tk');
+      //if(tk===jwtp){
+            let medical = ""
+            localStorage.setItem("medical", medical);
+
+            let person = [{ name: "María", document: "098904a4-db06-4438-98b5-fc85245cd4c5", gender: "female",birthDate : "1976-04-02", age : "46 year", email : "Unknown", phone : "1-410-829-0992", address : "7688 Libby Walk 02359 Pembroke US"}];
+            // let person = { name: "Terisa Anderson", document: "098904a4-db06-4438-98b5-fc85245cd4c5", gender: "female",birthDate : "1976-04-02", age : "46 year", email : "Unknown", phone : "1-410-829-0992", address : "7688 Libby Walk 02359 Pembroke US"};
+
+            localStorage.setItem("person", JSON.stringify(person)) ;
+
+            
+              person.forEach((p) => {
+              localStorage.setItem("name", p.name);
+              localStorage.setItem("document", p.document);
+              localStorage.setItem("gender", p.gender);
+              localStorage.setItem("birthDate", p.birthDate);
+              localStorage.setItem("age", p.age);
+              localStorage.setItem("email", p.email);
+              localStorage.setItem("phone", p.phone);
+              localStorage.setItem("address", p.address);     
+            });
+
+            let condition = [{titlec: "Condition",code:"History of appendectomy", ClinicalStatus: "active", VerificationStatus: "confirmed"}]
+            
+            condition.forEach((c) => {
+              localStorage.setItem("titlec", c.titlec);
+              localStorage.setItem("code", c.code);
+              localStorage.setItem("ClinicalStatus", c.ClinicalStatus);
+              localStorage.setItem("VerificationStatus", c.VerificationStatus);
+            });
+
+            let carePlan = [{titlecp: "CarePlan",category:"Routine antenatal care", reason : "Pregnancy diet education", status: "completed", period: "2011-02-11 to 2011-02-11"}]
+            carePlan.forEach((cp) => {
+              localStorage.setItem("titlecp", cp.titlecp);
+              localStorage.setItem("category", cp.category);
+              localStorage.setItem("reason", cp.reason);
+              localStorage.setItem("status", cp.status);
+              localStorage.setItem("period", cp.period);
+
+
+            });
+            let immunization = [{titlei: "Immunization", type:"Influenza, seasonal, injectable, preservative free", status : "completed", date: "2016-07-08T18:10:36-04:00"}]
+            immunization.forEach((i) => {
+              localStorage.setItem("titlei", i.titlei);
+              localStorage.setItem("type", i.type);
+              localStorage.setItem("statusi", i.status);
+              localStorage.setItem("date", i.date);
+
+            });
+
+
+            document.write("<h1> Historia clínica</h1>");
+            document.write("<div>Date: "+'2022-06-15' +"</div>");
+
+            person.forEach((p) => {
+
+              document.write("<div> <h3>Name: " + p.name + "</h3></div>");
+              document.write("<div> <strong>Document: </strong>" + p.document + "</div>");
+              document.write("<div> <strong>Gender: </strong>" + p.gender + "</div>");
+              document.write("<div> <strong>DOB: </strong>" + p.birthDate + "</div>");
+              document.write("<div> <strong>Age: </strong>" + p.age + "</div>");
+              document.write("<div> <strong>Email: </strong>" + p.email + "</div>");
+              document.write("<div> <strong>Phone: </strong>" + p.phone + "</div>");
+              document.write("<div> <strong>Address: </strong>" + p.address + "</div>"); 
+            })
+
+            document.write(" <hr>"); 
+
+            condition.forEach((c) => {
+              document.write("<div> <h4>" + c.titlec + "</h4></div>");
+              document.write("<div> <strong>Code: </strong>" + c.code + "</div>");
+              document.write("<div> <strong>ClinicalStatus: </strong>" + c.ClinicalStatus + "</div>");
+              document.write("<div> <strong>Verification Status: </strong>" + c.VerificationStatus + "</div>");
+            });  
+
+            document.write(" <hr>"); 
+
+            carePlan.forEach((cp) => {
+              document.write("<div> <h4>" + cp.titlecp + "</h4></div>");
+              document.write("<div> <strong>Category: </strong>" + cp.category + "</div>");
+              document.write("<div> <strong>Reason: </strong>"+ cp.reason +"</div>");
+              document.write("<div> <strong>Status: </strong>" + cp.status + "</div>");
+              document.write("<div> <strong>Periodo: </strong>from " + cp.period + "</div>");
+            });
+
+            document.write(" <hr>"); 
+            immunization.forEach((i) => {
+              document.write("<div> <h4>" + i.titlei + "</h4></div>");
+              document.write("<div> <strong>Type: </strong>" + i.type + "</div>");
+              document.write("<div> <strong>Status: </strong>" + i.status + "</div>");
+              document.write("<div> <strong>Date: </strong>" + i.date + "</div>");
+
+
+
+
+
+            });
+
+            
+
+      //}
+      //else{
+        //validaridentidad()
+
+                  //alert("usted no tiene permisos de acceso")  
+
+      //}
+      
+      
+      
+    </script></head>
+    <body><h1> Historia clínica</h1><div>Date: 2022-06-15</div><div> <h3>Name: Terisa Anderson</h3></div><div> <strong>Document: </strong>098904a4-db06-4438-98b5-fc85245cd4c5</div><div> <strong>Gender: </strong>female</div><div> <strong>DOB: </strong>1976-04-02</div><div> <strong>Age: </strong>46 year</div><div> <strong>Email: </strong>Unknown</div><div> <strong>Phone: </strong>1-410-829-0992</div><div> <strong>Address: </strong>7688 Libby Walk 02359 Pembroke US</div> <hr><div> <h4>Condition</h4></div><div> <strong>Code: </strong>History of appendectomy</div><div> <strong>ClinicalStatus: </strong>active</div><div> <strong>Verification Status: </strong>confirmed</div> <hr><div> <h4>CarePlan</h4></div><div> <strong>Category: </strong>Routine antenatal care</div><div> <strong>Reason: </strong>Pregnancy diet education</div><div> <strong>Status: </strong>completed</div><div> <strong>Periodo: </strong>from 2011-02-11 to 2011-02-11</div> <hr><div> <h4>Immunization</h4></div><div> <strong>Type: </strong>Influenza, seasonal, injectable, preservative free</div><div> <strong>Status: </strong>completed</div><div> <strong>Date: </strong>2016-07-08T18:10:36-04:00</div>
+
+
+</body></html>
